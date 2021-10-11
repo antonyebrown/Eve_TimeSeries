@@ -1,6 +1,6 @@
 # Time Series Analysis of Eve Online Participation Data
 
-For this project, we were asked to look at the raw war participation data for the various large groups of players involved in The Beeitnam War (also known as "World War Bee 2") in Eve Online, and attempt to forecast the next few weeks. Additionally, the client wanted to see if the historical numbers could tell us anything about the nature of the individual major groups involved.  
+In this project, we were asked to look at the raw war participation data for the various large groups of players involved in The Beeitnam War (also known as "World War Bee 2") in Eve Online, and attempt to forecast the next few weeks. Additionally, the client wanted to see if the historical numbers could tell us anything about the nature of the individual major groups involved.  
 
 For the players involved in the war, it's clear from the recent numbers that since the siege of 1DQ began, Imperium participation is rising, while PAPI (a coalition composed of primarily Legacy and Panfam) participation is falling. But what (if anything) does the past and current data predict about future participation? Using time series forecasting techniques, we can answer that question.
 
@@ -26,21 +26,21 @@ With the above understanding, we then move to selecting our forecasting model. W
 
 We'll also include the following events as transformation functions:
 
-*Northern conflict
-*War begins
-*FWST
-*M2
-*1DQ siege
+* Northern conflict
+* War begins
+* FWST
+* M2
+* 1DQ siege
 
 *(Note: Panfam joined the war later than the others, which is reflected in their "War begins" tranformation function)*
 
-Each of these factors affected the groups in slightly different ways, which our modeling accounts for (see the technical details for more information). Since we know the interruptions affected player participation, we should not remove them from the model based on significance alone. We should instead use the relative strength/weakness of these values to draw further conclusions.
+Each of these factors affected the groups in slightly different ways, which is taken into account through our modeling. Since we know the interruptions affected player participation, we should not remove them from the model based on significance alone. We should instead use the relative strength/weakness of these values to draw further conclusions.
 
 There are a ton of different ways to choose the variables and their form of impact in these types of models- but luckily, most statistics programs can automatically calculate and choose the best values for you. This is important since as we know, while Eve players as a whole may act in similar ways, each specific group can have different motivating factors and influences for participation.
 
 Finally, the further out you go in your prediction, the greater the chances for error. We will be conservative and forecast 10 weeks out from the latest available data point.
 
-# Why Can't We Just Use a Simple Moving Average or Simple Exponential Smoothing?
+### Why Can't We Just Use a Simple Moving Average or Simple Exponential Smoothing?
 
 The reason people use SMAs for, say, long term stock trading, is because we purposely want to assign less significance to rapid swings and shifts. Clearly, choosing a long term investment based on short-term trends would be a mistake. Additionally, we make the assumption that each point of data within the calculated range is equal (they have the same "reason" behind the value).
 
@@ -56,11 +56,11 @@ The modeling software did not see Seasonality as an important factor in any of t
 
 Here are the overall and individual modeling results:
 
-# "Big 3" (Imperium, Legacy, and Panfam)
+### "Big 3" (Imperium, Legacy, and Panfam)
 
 ![Combined ARIMA](https://github.com/antonyebrown/Eve_TimeSeries/blob/main/combined_arima.png)
 
-# Imperium
+### Imperium
 
 ![Imperium ARIMA](https://github.com/antonyebrown/Eve_TimeSeries/blob/main/imperium_arima.png)
 
@@ -74,7 +74,7 @@ Here are the overall and individual modeling results:
 | 1dq_siege         | 478.7347 | 0.252    |
 | ar.L1             | 0.677751 | 0        |
 
-# Legacy
+### Legacy
 
 ![Legacy ARIMA](https://github.com/antonyebrown/Eve_TimeSeries/blob/main/legacy_arima.png)
 
@@ -88,7 +88,7 @@ Here are the overall and individual modeling results:
 | 1dq_siege         | -253.66  | 0.4694   |
 | ar.L1             | 0.77897  | 0        |
 
-# Panfam
+### Panfam
 
 ![Panfam ARIMA](https://github.com/antonyebrown/Eve_TimeSeries/blob/main/panfam_arima.png)
 
@@ -102,7 +102,7 @@ Here are the overall and individual modeling results:
 | 1dq_siege         | -420.838 | 0.1392   |
 | ar.L1             | 0.685363 | 0        |
 
-# PAPI
+### PAPI
 
 ![PAPI ARIMA](https://github.com/antonyebrown/Eve_TimeSeries/blob/main/papi_arima.png)
 
@@ -116,7 +116,7 @@ Here are the overall and individual modeling results:
 | 1dq_siege         | -874.699 | 0.3154   |
 | ar.L1             | 0.714206 | 0        |
 
-# Imperium Subcaps
+### Imperium Subcaps
 
 ![Imperium Subcaps ARIMA](https://github.com/antonyebrown/Eve_TimeSeries/blob/main/impsub_arima.png)
 
@@ -130,7 +130,7 @@ Here are the overall and individual modeling results:
 | 1dq_siege         | 481.2323         | 0.055    |
 | ar.L1             | 0.752436         | 0        |
 
-# PAPI Subcaps
+### PAPI Subcaps
 
 ![PAPI Subcaps ARIMA](https://github.com/antonyebrown/Eve_TimeSeries/blob/main/papisub_arima.png)
 
