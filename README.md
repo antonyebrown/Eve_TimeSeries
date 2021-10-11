@@ -163,6 +163,8 @@ Something that surprised me to discover was just how differently each group reac
 
 **It's plain to see that our models predict good news for the Imperium, and a dire warning for PAPI.** If their strategy doesn't change, the Imperium's numbers will continue to rise, while PAPI's numbers will stagnate. It's important to take note of the confidence bands around these predictions- in the case of the Imperium, the tighter band predicts, at worst, slightly lower numbers, while PAPI has a larger capacity to underperform.
 
+*Note: Roughly 4 months after original publication of this work, PAPI would go on to lose the war through a lack of participation - see [this article](https://massivelyop.com/2021/08/03/eve-onlines-record-breaking-world-war-bee-2-has-seemingly-come-to-an-end/ "PC Games Article on the end of WWB 2") for more information.*
+
 
 ## References
 
